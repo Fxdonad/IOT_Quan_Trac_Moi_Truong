@@ -1,0 +1,57 @@
+npm install -D tailwindcss postcss autoprefixer
+npm create vite@latest
+npm install axios
+npm install react-markdown
+npm install @canvasjs/react-charts
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+npx tailwindcss init -p
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+npm i prop-types
+npm i sass
+npm install @reduxjs/toolkit
+npm install react-redux
+npm install redux
+npm install react-hook-form
+npm i yup
+npm i @hookform/resolvers
+npm i react-router-dom
+npm i bootstrap
+npm install swiper
+npm i axios
+npm i uuid
+npm i react-error-boundary
+npm i react-paginate
+npm install react-slick slick-carousel
+npm install react-syntax-highlighter
+npm i swr
+npm i mdb-react-ui-kit
+npm i @chakra-ui/react @emotion/react @emotion/styled frame
+npm i @monaco-editor/react
+
+# Library
+npm i react-slider
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+npm i react-awesome-slider
+npm install js-cookie
+npm install yup formik
+npm install react-toastify
+npm i jwt-decode
+
+
+
+
+KEY API Gemini: AIzaSyB4A_fWNEQPntj8TS4tmhDnw44hY_pY9uQ
