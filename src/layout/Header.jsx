@@ -19,6 +19,13 @@ function Header() {
     };
   }, []);
 
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <header
@@ -33,7 +40,7 @@ function Header() {
           </span>
         </div>
         <div className="flex items-center space-x-4">
-          <div className="flex justify-center space-x-3">
+          <div className="hidden lg:flex justify-center space-x-3">
             <a href="#" className="flex items-center text-white">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 fill="none" 
@@ -115,7 +122,42 @@ function Header() {
               <span className="hidden sm:inline">Chi tiết</span>
             </a>
           </div>
-          <button className="focus:outline-none">
+
+          {/* Menu di động */}
+          <div
+            className={`fixed top-0 right-0 w-4/12 h-full bg-primary text-white transform transition-transform ${
+              isOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+          >
+            <button
+              className="absolute top-4 right-4 text-white"
+              onClick={toggleMenu}
+            >
+              <svg
+                className="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div className="flex ml-4 flex-col items-left mt-20 space-y-4">
+              <a href="#" className="p-3 rounded-l-md text-xl hover:text-white hover:scale-110 bg-secondary">Trang chủ</a>
+              <a href="#" className="p-3 rounded-l-md text-xl hover:text-white hover:scale-110 bg-secondary">Thuộc tính</a>
+              <a href="#" className="p-3 rounded-l-md text-xl hover:text-white hover:scale-110 bg-secondary">Bảng tin</a>
+              <a href="#" className="p-3 rounded-l-md text-xl hover:text-white hover:scale-110 bg-secondary">Bản đồ</a>
+              <a href="#" className="p-3 rounded-l-md text-xl hover:text-white hover:scale-110 bg-secondary">Chi tiết</a>
+            </div>
+          </div>
+
+          <button className="lg:hidden focus:outline-none" onClick={toggleMenu}>
             <svg
               className="w-6 h-6 text-white"
               xmlns="http://www.w3.org/2000/svg"
