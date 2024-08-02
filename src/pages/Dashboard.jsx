@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
 
 function Dashboard() {
+  const [selectedLocation, setSelectedLocation] = useState("Vị trí 1");
+
+  const locationData = {
+    "Vị trí 1": {
+      location: "Vị trí 1",
+      nextDayTemp: "28°C",
+      weeklyWeather: "Mưa nhẹ, Nhiều mây, Nắng",
+    },
+    "Vị trí 2": {
+      location: "Vị trí 2",
+      nextDayTemp: "30°C",
+      weeklyWeather: "Nắng, Mưa rào, Ít mây",
+    },
+  };
+
+  const handleLocationChange = (event) => {
+    setSelectedLocation(event.target.value);
+  };
+
+
   return (
     <div className="bg-background text-foreground font-manrope">
       <Header />
@@ -99,11 +119,39 @@ function Dashboard() {
             </p>
           </div>
         </div>
-        <section className="flex flex-col items-center p-8 m-4 border rounded-lg shadow-lg bg-card text-card-foreground border-border w-[calc(60rem+2rem)]">
+        <section className="flex flex-col items-center p-8 m-4 border rounded-lg shadow-lg bg-card text-card-foreground border-border w-full md:w-[calc(60rem+2rem)]">
           <h2 className="text-2xl font-bold">Dự báo</h2>
           <p className="mt-4 text-muted-foreground">
             Nội dung dự báo sẽ được cập nhật ở đây.
           </p>
+          
+          <div className="mt-4 w-full max-w-md">
+            <label htmlFor="locationSelect" className="block mb-2 text-lg font-medium">
+              Chọn vị trí:
+            </label>
+            <select
+              id="locationSelect"
+              value={selectedLocation}
+              onChange={handleLocationChange}
+              className="block w-full p-2 border rounded-lg bg-background text-foreground"
+            >
+              <option value="Vị trí 1">Vị trí 1</option>
+              <option value="Vị trí 2">Vị trí 2</option>
+            </select>
+          </div>
+
+          <div className="mt-6 w-full max-w-md p-4 border rounded-lg bg-background text-foreground">
+            <h3 className="text-xl font-semibold">Thông tin vị trí:</h3>
+            <p className="mt-2">
+              <strong>Vị trí:</strong> {locationData[selectedLocation].location}
+            </p>
+            <p className="mt-2">
+              <strong>Nhiệt độ ngày tiếp theo:</strong> {locationData[selectedLocation].nextDayTemp}
+            </p>
+            <p className="mt-2">
+              <strong>Thời tiết trong tuần:</strong> {locationData[selectedLocation].weeklyWeather}
+            </p>
+          </div>
         </section>
       </main>
       <Footer />
