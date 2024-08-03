@@ -28,7 +28,7 @@ function Dashboard() {
       <Header />
       <main className="relative flex flex-col items-center justify-center min-h-screen pt-28 bg-[#f5f5f5]">
         <div className="flex flex-wrap justify-center p-4">
-          <div className="p-8 m-4 border rounded-lg shadow-lg bg-card text-card-foreground border-border w-[30rem]">
+          <div className="p-8 m-4 border rounded-lg shadow-lg bg-card text-card-foreground border-border w-auto">
             <h2 className="flex items-center text-2xl font-bold">
               <svg
                 className="w-6 h-6 mr-2"
@@ -44,10 +44,10 @@ function Dashboard() {
                   d="M3 3h18M3 12h18M3 21h18"
                 />
               </svg>
-              CẢNG XI MĂNG HẠ LONG
+              Trạm 01 Nam Định
             </h2>
             <p className="text-muted-foreground">
-              Thông Nhất, Hoành Bồ, Hạ Long, QN
+              Thành phố Nam Định, Nam Định
             </p>
             <div className="mt-4">
               <p>
@@ -73,7 +73,7 @@ function Dashboard() {
               Hiện tại: <span className="font-semibold">Sóng nhó</span>
             </p>
           </div>
-          <div className="p-8 m-4 border rounded-lg shadow-lg bg-card text-card-foreground border-border w-[30rem]">
+          <div className="p-8 m-4 border rounded-lg shadow-lg bg-card text-card-foreground border-border w-auto">
             <h2 className="flex items-center text-2xl font-bold">
               <svg
                 className="w-6 h-6 mr-2"
@@ -89,10 +89,10 @@ function Dashboard() {
                   d="M3 3h18M3 12h18M3 21h18"
                 />
               </svg>
-              CẢNG XĂNG ĐẦU B12
+              Trạm 02 Thái Bình
             </h2>
             <p className="text-muted-foreground">
-              Rải Chảy, TP Hạ Long, Quảng Ninh
+              Đông Hoàng, Đông Hưng, Thái Bình
             </p>
             <div className="mt-4">
               <p>
